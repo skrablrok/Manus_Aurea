@@ -1,0 +1,879 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins';
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: #E9EFF7;
+}
+
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10000;
+    width: 100%;
+}
+
+ul li a {
+    position: relative;
+}
+
+.nav_bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px clamp(20px, 5vw, 70px);
+    background: #fff;
+    transition: background-color .35s ease, padding .35s ease, box-shadow .35s ease, backdrop-filter .35s ease;
+}
+
+.nav_bar a {
+    max-width: max-content;
+    text-decoration: none;
+    color: #14213D;
+    font-size: clamp(14px, 1vw, 90px);
+    z-index: 1;
+}
+
+.nav_link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .3s ease;
+}
+.nav_link:hover::after,
+.nav_link.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.nav_link.active {
+    font-weight: 600;
+}
+
+.kontakt_nav{
+    background-color: #C9A227;
+    color: #14213D;
+    padding: 10px 26px;
+    border-radius: 999px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.kontakt_nav::after{
+    content: none;
+}
+.kontakt_nav:hover{
+    background-color: #A6811E;
+    transform: translateY(-2px);
+}
+.nav_bar a.kontakt_nav {
+    color: #14213D;
+}
+
+
+
+.logo img {
+    width: clamp(100px, 4vw, 300px);
+    transition: width .35s ease;
+}
+
+.navlist {
+    display: flex;
+    align-items: center;
+    gap: clamp(18px, 2.2vw, 40px);
+    list-style: none;
+}
+
+.navlist li {
+    padding: 8px 0;
+}
+
+#menu-icon {
+    color: #14213D;
+    font-size: 55px;
+    z-index: 1101;
+    cursor: pointer;
+    display: none;
+    transition: .3s;
+}
+#menu-icon.bx-x {
+    transform: rotate(90deg); /* lep efekt */
+}
+
+
+
+
+
+#dropdown {
+    position: relative;
+}
+
+/* SKRIT dropdown – višina = 0, scaleY = 0 */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #14213D;
+    list-style: none;
+    padding: 8px 0;
+    margin: 0;
+    overflow: hidden;               /* pomembno!!! */
+    min-width: 210px;
+    border-radius: 12px;
+    box-shadow: 0 18px 40px rgba(10, 22, 45, 0.28);
+    transform-origin: top;          /* animacija od vrha navzdol */
+    transform: scaleY(0);           /* začetno stanje */
+    transition: transform .35s ease;
+    z-index: 1001; /* gladka animacija */
+}
+
+/* povezave */
+.dropdown li a {
+    padding: 12px 20px;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown li a:hover {
+    background-color: #D3E0F0;
+    color: #14213D;
+}
+
+/* KO HOVERAŠ – scaleY iz 0 → 1 */
+#dropdown:hover .dropdown {
+    transform: scaleY(1);
+}
+
+
+
+
+
+.sticky {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px clamp(20px, 5vw, 70px);
+    background: rgba(247, 250, 253, 0.8);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    box-shadow: rgba(10, 22, 45, 0.12) 0px 10px 30px;
+}
+.nav_bar.sticky .logo img {
+    width: clamp(80px, 3.2vw, 240px);
+}
+.nav_bar.sticky a {
+    color: #14213D; /* temna barva */
+}
+.nav_bar.sticky .dropdown li a {
+    color: #fff;
+}
+.nav_bar.sticky .kontakt_nav {
+    color: #14213D; /* temna barva */
+}
+@media (max-width:1035px){
+    #dropdown{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .dropdown{
+        width: 100%;
+    }
+
+    .mobile-dropdown .dropdown {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        transform: scaleY(1); /* odstranimo scaleY, ker ne deluje dobro pri klikih */
+    }
+
+    .mobile-dropdown.open .dropdown {
+        max-height: 500px; /* dovolj za vse linke, lahko prilagodiš */
+    }
+
+    .nav_bar.sticky a {
+        color: #14213D; /* temna barva */
+    }
+    .nav_bar.sticky .dropdown li a {
+        color: #fff;
+    }
+    .nav_bar.sticky .kontakt_nav {
+        color: #14213D; /* temna barva */
+    }
+    #menu-icon{
+        display: block;
+    }
+    .navlist{
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: min(80vw, 300px);
+        height: 100vh;
+        background: #14213D;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        box-shadow: -12px 0 40px rgba(0,0,0,0.28);
+        transition: right .4s ease;
+    }
+    .navlist li{
+        padding: 15px;
+    }
+    .navlist a{
+        display: flex;
+        margin-left: 0;
+        color: #ffffff;
+        font-size: clamp(18px, 1.9vw, 90px);
+    }
+    .navlist.open{
+        right: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.glava{
+    background-image:linear-gradient(rgba(10,22,45,0.55)), url(kontakt/IMG_0172.jpeg);
+    background-color: #14213D;
+    background-position: center;
+    background-size: cover;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.besedilo{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+.besedilo h1{
+    font-size: clamp(29px, 5vw, 200px);
+    color: #ffffff;
+}
+.besedilo p{
+    color: #ffffffb8;
+    font-weight: 100;
+    font-size: clamp(14px, 1vw, 120px);
+}
+
+
+@media(max-width: 680px){
+    .besedilo{
+        padding-top: 15vw;
+        width: 80%;
+    }
+}
+
+
+
+
+
+
+
+
+
+.text{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 5vw;  
+    padding-top: 5vw;
+    font-size: clamp(12px, .9vw, 120px);
+    text-align: justify  ;
+}
+
+
+
+
+
+
+
+
+
+
+@media(max-width:1028px){
+    .text{
+        width: 80%;
+        padding-top: 15vw;
+        padding-bottom: 15vw;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+    background-image:linear-gradient(rgba(10,22,45,0.45), rgba(10,22,45,0.45)), url("index/IMG_0509.jpeg"); /* zamenjaj */
+    background-size: cover;
+    background-position: center;
+}
+
+/* LEVA STRAN */
+
+.contact-left {
+    color: white;
+    max-width: 40%;
+}
+
+.contact-left h1 {
+    font-size: clamp(45px, 3.5vw, 120px);
+    margin-bottom: .5vw;
+    font-weight: 700;
+}
+
+.contact-left p {
+    font-size: clamp(16px, 1vw, 90px);
+    margin: 8px 0;
+    font-weight: 100;
+}
+.contact-left a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+/* DESNA STRAN */
+
+.contact-right {
+    width: 40%;
+    color: white;
+}
+
+.contact-right h2 {
+    text-align: left;
+    font-size: clamp(24px, 1.5vw, 80px);
+    margin-bottom: 35px;
+    font-weight: 300;
+}
+
+/* FORM STYLING */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 18px 20px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-size: clamp(12px, .8vw, 50px);
+    box-sizing: border-box;
+    word-break: break-all;
+}
+
+.contact-form textarea {
+    height: 15vw;
+    resize: none;
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+}
+
+.row input {
+    width: 100%;
+}
+
+/* BUTTON */
+
+.contact-form button {
+    font-size: clamp(12px, .8vw, 120px);
+    isolation: isolate;
+    position: relative;
+    overflow: hidden;
+    background-color: #14213D;
+    border: none;
+    padding: 1vw;
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    border-radius: 50px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.4s ease;
+}
+.contact-form button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #D3E0F0;          /* BARVA, KI PRIDE OB HOVER */
+    transform: scaleX(0);
+    transform-origin: left;       /* animacija iz leve proti desni */
+    transition: transform 0.4s ease;
+    z-index: -1;
+    border-radius: 50px;
+}
+
+/* HOVER */
+.contact-form button:hover::before {
+    transform: scaleX(1);
+}
+
+/* da je tekst viden nad animacijo */
+.contact-form button:hover {
+    color: #14213D; /* poljubno – spremeni po želji */
+    border: none;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    transition: padding 0.25s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Ko je fokus – placeholder gre navzgor in zbledi */
+.contact-form input:focus::placeholder,
+.contact-form textarea:focus::placeholder {
+    transform: translateY(-12px);
+    opacity: 0.6;
+}
+.kontakt{
+    padding-bottom: 5vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 970px){
+    .contact-section{
+        flex-direction: column;
+        gap: 5vw;
+    }
+
+    .contact-right{
+        width: 80%;
+    }
+    .contact-left{
+        max-width: 80%;
+        width: 80%;
+
+    }
+}
+
+@media(max-width: 600px){
+    .contact-section{
+        flex-direction: column;
+        gap: 5vw;
+    }
+
+    .contact-right{
+        width: 80%;
+    }
+    .contact-left{
+        max-width: 80%;
+        width: 80%;
+
+    }
+    .contact-left h1 {
+        font-size: clamp(35px, 4vw, 120px);
+    }
+
+    .contact-left p {
+        font-size: clamp(13px, 1vw, 90px);
+    }
+    .contact-right h2 {
+        font-size: clamp(22px, 1.5vw, 80px);
+    }
+    .contact-form textarea {
+        height: 25vw;
+    }
+    .contact-form button{
+        padding: 1.5vw;
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
+}
+@media(max-height:1245px){
+    .contact-section{
+        height: fit-content;
+        padding-top: 2vw;
+        padding-bottom: 2vw;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    background-color: #14213D;
+    padding-top: 2vw;
+}
+.noga{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 2vw;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+.info a, .info li, .info h2{
+    color: #ffffff;
+    text-decoration: none;
+}
+.info li, .info a{
+    font-weight: 100;
+}
+.podstrani{
+    display: flex;
+    flex-direction: column;
+    gap: .5vw;
+}
+.podstrani ul{
+    list-style-type: none;
+    display: flex;
+    gap: 2vw;
+}
+.storitve-kontakt{
+    display: flex;
+    justify-content: flex-start;
+    gap: 10vw;
+}
+.storitve-list{
+    display: flex;
+    flex-direction: column;
+    gap: .5vw;
+}
+.kontakt-noga{
+    display: flex;
+    flex-direction: column;
+    gap: .5vw;
+}
+.storitve-list ul{
+    list-style-type: none;
+}
+.zemljevid{
+    width: 45%;
+    height: 20vw;
+    border-radius: 50px;
+}
+iframe{
+    border-radius: 50px;
+}
+
+
+
+
+.noga a{
+    font-size: clamp(10px, .9vw, 50px);
+}
+.noga h2{
+    font-size: clamp(16px, 1.3vw, 50px);
+}
+
+
+
+
+
+
+@media(max-width: 900px){
+    .storitve-kontakt{
+        flex-direction: column;
+        gap: 2vw;
+    }
+    .info{
+        gap: 2vw;
+    }
+    .zemljevid{
+        height: 40vw;
+    }
+}
+@media(max-width: 660px){
+    .zemljevid{
+        height: 50vw;
+    }
+}
+@media(max-width:455px){
+    .noga{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5vw;
+    }
+    .zemljevid{
+        width: 90%;
+        height: 50vw;
+    }
+    .info{
+        width: 85%;
+    }
+    .noga a{
+        font-size: clamp(14px, 2vw, 90px);
+    }
+    .noga h2{
+        font-size: clamp(20px, 3vw, 50px);
+    }
+    .podstrani ul{
+        gap: 3vw;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.avtorske{
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+.avtorske p{
+    padding-top: .5vw;
+    padding-bottom: .5vw;
+    font-size: clamp(8px, .6vw, 120px);
+}
+.avtorske a{
+    color: #14213D;
+
+}
+
+
+
+
+
+
+
+
+
