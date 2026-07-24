@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: poppins;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 body {
@@ -336,7 +336,7 @@ ul li a {
 .leva_hero h1{
     color: #FFE599;
     font-weight: bold;
-    font-size: clamp(35px, 3.5vw, 120px);
+    font-size: clamp(28px, 3vw, 120px);
 }
 .leva_hero p{
     color: #ffffff;
@@ -408,7 +408,7 @@ ul li a {
         width: 100%;
     }
     .leva_hero h1{
-        font-size: clamp(35px, 5.5vw, 120px);
+        font-size: clamp(19px, 5.5vw, 120px);
     }
     .leva_hero p{
         font-size: clamp(17px, 2vw, 120px);
@@ -545,8 +545,6 @@ ul li a {
 .storitev .gumb_storitev button{
     background-color: #14213D;
     position: relative;
-    overflow: hidden;             /* NUJNO za animacijo */
-    isolation: isolate;
     border: none;
     padding: .7vw;
     padding-left: 1.5vw;
@@ -555,31 +553,18 @@ ul li a {
     color: #ffffff;
     font-size: clamp(12px, .8vw, 60px);
     cursor: pointer;
-    transition: color 0.4s ease;
+    box-shadow:
+        rgba(0, 0, 0, 0.41) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-
-
-.storitev .gumb_storitev button::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: #D3E0F0;          /* BARVA, KI PRIDE OB HOVER */
-    transform: scaleX(0);
-    transform-origin: left;       /* animacija iz leve proti desni */
-    transition: transform 0.4s ease;
-    z-index: -1;
-}
-
-/* HOVER */
-.storitev .gumb_storitev button:hover::before {
-    transform: scaleX(1);
-}
-
-/* da je tekst viden nad animacijo */
+/* HOVER – gumb se rahlo dvigne (enako kot hero gumbi) */
 .storitev .gumb_storitev button:hover {
-    color: #14213D; /* poljubno – spremeni po želji */
-    border: none;
+    transform: translateY(-6px);
+    box-shadow:
+        rgba(0, 0, 0, 0.45) 0px 14px 24px,
+        rgba(0, 0, 0, 0.25) 0px 8px 8px;
 }
 
 @media(max-width:730px){
@@ -680,16 +665,12 @@ ul li a {
 
 .onama{
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     gap: 3vw;
     padding: 5vw;
 }
-.kaja, .rok{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.kaja .text, .rok .text{
+.onama .text{
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -705,9 +686,7 @@ ul li a {
 .onama .text button{
     font-size: clamp(10px, 1vw, 120px);
     background-color: #14213D;
-    isolation: isolate;
     position: relative;
-    overflow: hidden;
     border: none;
     padding: .7vw;
     padding-left: 1.5vw;
@@ -715,29 +694,18 @@ ul li a {
     border-radius: 50px;
     color: #ffffff;
     cursor: pointer;
-    transition: color 0.4s ease;
-}
-.onama .text button::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: #D3E0F0;          /* BARVA, KI PRIDE OB HOVER */
-    transform: scaleX(0);
-    transform-origin: left;       /* animacija iz leve proti desni */
-    transition: transform 0.4s ease;
-    z-index: -1;
-    border-radius: 50px;
+    box-shadow:
+        rgba(0, 0, 0, 0.41) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* HOVER */
-.onama .text button:hover::before {
-    transform: scaleX(1);
-}
-
-/* da je tekst viden nad animacijo */
+/* HOVER – gumb se rahlo dvigne (enako kot hero gumbi) */
 .onama .text button:hover {
-    color: #14213D; /* poljubno – spremeni po želji */
-    border: none;
+    transform: translateY(-6px);
+    box-shadow:
+        rgba(0, 0, 0, 0.45) 0px 14px 24px,
+        rgba(0, 0, 0, 0.25) 0px 8px 8px;
 }
 
 .onama-gumbi {
@@ -751,30 +719,19 @@ ul li a {
     background-color: transparent;
     border: solid 1px #14213D;
     color: #14213D;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-.onama .text .btn-sekundarni::before {
-    content: none;
 }
 .onama .text .btn-sekundarni:hover {
-    background-color: #14213D;
-    color: #ffffff;
     border: solid 1px #14213D;
 }
 
-.kaja .slika{
-    background-image: url(index/IMG_0209.jpeg);
-}
-.rok .slika{
-    background-image: url(index/IMG_2843.jpeg);
-}
-
 .onama .slika{
-    height: 35vw ;
+    background-image: url(index/pexels-gustavo-fring-5888064.jpg);
+    height: 35vw;
     width: 30vw;
     border-radius: 25%;
     background-position: center;
     background-size: cover;
+    flex-shrink: 0;
 }
 
 
@@ -798,37 +755,21 @@ ul li a {
 }
 @media(max-width: 650px){
     .onama{
-        gap: 10vw;
-    }
-    .kaja, .rok{
         flex-direction: column;
+        gap: 6vw;
     }
-    .rok .slika{
-        display: none;
-    }
-    .kaja .slika{
+    .onama .slika{
         width: 80%;
         height: 70vw;
     }
-    .rok .slika2{
-        height: 70vw ;
+    .onama .text{
         width: 80%;
-        border-radius: 25%;
-        background-position: center;
-        background-size: cover;
-        background-image: url(index/IMG_2843.jpeg);
-    }
-    .kaja .text, .rok .text{
-        width: 80%;
-        display: flex;
-        flex-direction: column;
-        gap: 1vw;
     }
     .onama .text h2{
         font-size: clamp(18px, 4vw, 120px);
     }
     .onama .text p{
-        font-size: clamp(10px, 2vw, 120px);
+        font-size: clamp(11px, 2vw, 120px);
         font-weight: 100;
     }
     .onama .text button{
@@ -956,8 +897,16 @@ ul li a {
     font-size: clamp(14px, 1.1vw, 20px);
 }
 
+.google-review-seznam {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.6vw;
+}
+
 .google-review-card {
-    width: min(90%, 480px);
+    width: min(90%, 400px);
     background: #ffffff;
     border-radius: 18px;
     padding: 1.8vw 2vw;
@@ -1019,35 +968,70 @@ ul li a {
     border-color: #14213D;
 }
 
+.cta-narocilo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: linear-gradient(rgba(10,22,45,0.72), rgba(10,22,45,0.72)), url(masaze/pexels-olia-danilevich-9336026.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 5vw 8vw;
+}
+
+.cta-narocilo-vsebina {
+    max-width: 700px;
+}
+.cta-narocilo-vsebina h2 {
+    color: #FFE599;
+    font-weight: bold;
+    font-size: clamp(24px, 2.6vw, 48px);
+    margin-bottom: 1vw;
+}
+.cta-narocilo-vsebina p {
+    color: #ffffff;
+    font-weight: 300;
+    font-size: clamp(13px, 1.1vw, 18px);
+    line-height: 1.6;
+    margin-bottom: 1.6vw;
+}
+.cta-narocilo-vsebina button {
+    background-color: #C9A227;
+    color: #14213D;
+    border: none;
+    padding: .9vw 2.2vw;
+    border-radius: 50px;
+    font-size: clamp(13px, 1vw, 18px);
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow:
+        rgba(0, 0, 0, 0.41) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.cta-narocilo-vsebina button:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        rgba(0, 0, 0, 0.45) 0px 14px 24px,
+        rgba(0, 0, 0, 0.25) 0px 8px 8px;
+}
+
+@media(max-width: 700px){
+    .cta-narocilo{
+        padding: 14vw 8vw;
+    }
+    .cta-narocilo-vsebina{
+        max-width: 100%;
+    }
+}
+
 .instagram-sledi {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2.5vw;
     padding: 3vw 5vw 5vw;
-}
-
-.instagram-objave {
-    width: 100%;
-    max-width: 1100px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.4vw;
-    justify-items: center;
-}
-.instagram-objave iframe {
-    width: 100% !important;
-}
-
-@media(max-width: 900px){
-    .instagram-objave{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media(max-width: 620px){
-    .instagram-objave{
-        grid-template-columns: 1fr;
-    }
 }
 
 .instagram-sledi-vsebina {
@@ -1243,6 +1227,35 @@ ul li a {
     resize: none;
 }
 
+.soglasje {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: clamp(11px, .75vw, 40px);
+    font-weight: 300;
+    color: #ffffff;
+    line-height: 1.5;
+    cursor: pointer;
+}
+.contact-form .soglasje input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    accent-color: #C9A227;
+    cursor: pointer;
+}
+.soglasje a {
+    color: #FFE599;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+.soglasje a:hover {
+    color: #ffffff;
+}
+
 .row {
     display: flex;
     gap: 20px;
@@ -1256,9 +1269,7 @@ ul li a {
 
 .contact-form button {
     font-size: clamp(12px, .8vw, 120px);
-    isolation: isolate;
     position: relative;
-    overflow: hidden;
     background-color: #14213D;
     border: none;
     padding: 1vw;
@@ -1267,29 +1278,18 @@ ul li a {
     border-radius: 50px;
     color: #ffffff;
     cursor: pointer;
-    transition: color 0.4s ease;
-}
-.contact-form button::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: #D3E0F0;          /* BARVA, KI PRIDE OB HOVER */
-    transform: scaleX(0);
-    transform-origin: left;       /* animacija iz leve proti desni */
-    transition: transform 0.4s ease;
-    z-index: -1;
-    border-radius: 50px;
+    box-shadow:
+        rgba(0, 0, 0, 0.41) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* HOVER */
-.contact-form button:hover::before {
-    transform: scaleX(1);
-}
-
-/* da je tekst viden nad animacijo */
+/* HOVER – gumb se rahlo dvigne (enako kot hero gumbi) */
 .contact-form button:hover {
-    color: #14213D; /* poljubno – spremeni po želji */
-    border: none;
+    transform: translateY(-6px);
+    box-shadow:
+        rgba(0, 0, 0, 0.45) 0px 14px 24px,
+        rgba(0, 0, 0, 0.25) 0px 8px 8px;
 }
 .contact-form input:focus,
 .contact-form textarea:focus {

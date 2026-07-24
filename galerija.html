@@ -52,8 +52,8 @@
                 <li id="dropdown" class="mobile-dropdown">
                     <a class="nav_link" href="#">Storitev</a>
                     <ul class="dropdown">
-                        <li><a href="sportna_terapija.html">Športna terapija</a></li>
-                        <li><a href="masaze.html">Masaže</a></li>
+                        <li><a href="sportna_terapija.html">Fizioterapija</a></li>
+                        <li><a href="masaze.html">Terapevtska masaža</a></li>
 
                     </ul>
                 </li>
@@ -87,64 +87,7 @@
 
 
 
-        <div class="galerija">
-            <div class="galerija-item">
-                <img src="galerija/IMG_0119.jpeg" alt="Manus Aurea – fotografija prostora 1" loading="lazy">
-                <div class="galerija-hover"><i class="bx bx-expand-alt"></i></div>
-            </div>
-            <div class="galerija-item">
-                <img src="galerija/IMG_3292.jpeg" alt="Manus Aurea – fotografija prostora 2" loading="lazy">
-                <div class="galerija-hover"><i class="bx bx-expand-alt"></i></div>
-            </div>
-            <div class="galerija-item">
-                <img src="galerija/IMG_0120.jpeg" alt="Manus Aurea – fotografija prostora 3" loading="lazy">
-                <div class="galerija-hover"><i class="bx bx-expand-alt"></i></div>
-            </div>
-            <div class="galerija-item">
-                <img src="galerija/IMG_0123.jpeg" alt="Manus Aurea – fotografija prostora 4" loading="lazy">
-                <div class="galerija-hover"><i class="bx bx-expand-alt"></i></div>
-            </div>
-            <div class="galerija-item">
-                <img src="galerija/IMG_0140.jpeg" alt="Manus Aurea – fotografija prostora 5" loading="lazy">
-                <div class="galerija-hover"><i class="bx bx-expand-alt"></i></div>
-            </div>
-            <div class="galerija-item">
-                <img src="galerija/IMG_0141.jpeg" alt="Manus Aurea – fotografija prostora 6" loading="lazy">
-                <div class="galerija-hover"><i class="bx bx-expand-alt"></i></div>
-            </div>
-            <div class="galerija-item">
-                <img src="galerija/IMG_0145.jpeg" alt="Manus Aurea – fotografija prostora 7" loading="lazy">
-                <div class="galerija-hover"><i class="bx bx-expand-alt"></i></div>
-            </div>
-            <div class="galerija-item">
-                <img src="galerija/IMG_0148.jpeg" alt="Manus Aurea – fotografija prostora 8" loading="lazy">
-                <div class="galerija-hover"><i class="bx bx-expand-alt"></i></div>
-            </div>
-            <div class="galerija-item">
-                <img src="galerija/IMG_0151.jpeg" alt="Manus Aurea – fotografija prostora 9" loading="lazy">
-                <div class="galerija-hover"><i class="bx bx-expand-alt"></i></div>
-            </div>
-            <div class="galerija-item">
-                <img src="galerija/IMG_0155.jpeg" alt="Manus Aurea – fotografija prostora 10" loading="lazy">
-                <div class="galerija-hover"><i class="bx bx-expand-alt"></i></div>
-            </div>
-            <div class="galerija-item">
-                <img src="galerija/IMG_0166.jpeg" alt="Manus Aurea – fotografija prostora 11" loading="lazy">
-                <div class="galerija-hover"><i class="bx bx-expand-alt"></i></div>
-            </div>
-            <div class="galerija-item">
-                <img src="galerija/IMG_0172.jpeg" alt="Manus Aurea – fotografija prostora 12" loading="lazy">
-                <div class="galerija-hover"><i class="bx bx-expand-alt"></i></div>
-            </div>
-            <div class="galerija-item">
-                <img src="galerija/IMG_0491.jpeg" alt="Manus Aurea – fotografija prostora 13" loading="lazy">
-                <div class="galerija-hover"><i class="bx bx-expand-alt"></i></div>
-            </div>
-            <div class="galerija-item">
-                <img src="galerija/IMG_0509.jpeg" alt="Manus Aurea – fotografija prostora 14" loading="lazy">
-                <div class="galerija-hover"><i class="bx bx-expand-alt"></i></div>
-            </div>
-        </div>
+        <div class="galerija" id="galerija-grid"></div>
 
         <div class="lightbox" id="lightbox">
             <button class="lightbox-close" id="lightboxClose" aria-label="Zapri">&times;</button>
@@ -237,7 +180,7 @@
                     <div class="storitve-list">
                         <h2>STORITVE</h2>
                         <ul>
-                            <li><a class="list-storitev" href="sportna_terapija.html">Športna terapija</a></li>
+                            <li><a class="list-storitev" href="sportna_terapija.html">Fizioterapija</a></li>
                             <li><a class="list-storitev" href="masaze.html#masaza">Masaža posameznih predelov</a></li>
                             <li><a class="list-storitev" href="masaze.html#masaza">Klasična masaža celega telesa</a></li>
                             <li><a class="list-storitev" href="masaze.html#masaza">Športna masaža celega telesa</a></li>
@@ -260,13 +203,13 @@
 
 
         <div class="avtorske">
-            <p>© 2025 Vse pravice pridržane | by <a href="https:\\skrablweb.si" target="_blank" >Skrablweb</a> | Pogoji poslovanja</p>
+            <p>© 2025 Vse pravice pridržane | by <a href="https:\\skrablweb.si" target="_blank" >Skrablweb</a> | Pogoji poslovanja | <a href="politika-zasebnosti.html">Politika zasebnosti</a></p>
         </div>
     </footer>
     <script src="index.js"></script>
 
     <script>
-        const galerijaItems = document.querySelectorAll('.galerija-item');
+        let galerijaItems = [];
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightboxImg');
         const lightboxClose = document.getElementById('lightboxClose');
@@ -290,10 +233,6 @@
             lightbox.classList.remove('open');
         }
 
-        galerijaItems.forEach((item, index) => {
-            item.addEventListener('click', () => openLightbox(index));
-        });
-
         lightboxClose.addEventListener('click', closeLightbox);
         lightboxPrev.addEventListener('click', () => showImage(currentIndex - 1));
         lightboxNext.addEventListener('click', () => showImage(currentIndex + 1));
@@ -308,6 +247,24 @@
             if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
             if (e.key === 'ArrowRight') showImage(currentIndex + 1);
         });
+
+        const galerijaGrid = document.getElementById('galerija-grid');
+        if (galerijaGrid) {
+            sanityFetch('*[_type=="galerijaSlika"] | order(vrstniRed asc) {"url": slika.asset->url, opis}')
+                .then(slike => {
+                    if (!slike || !slike.length) return;
+                    galerijaGrid.innerHTML = slike.map((s, i) =>
+                        '<div class="galerija-item">' +
+                            '<img src="' + s.url + '" alt="' + (s.opis || 'Manus Aurea – fotografija prostora ' + (i + 1)) + '" loading="lazy">' +
+                            '<div class="galerija-hover"><i class="bx bx-expand-alt"></i></div>' +
+                        '</div>'
+                    ).join('');
+                    galerijaItems = document.querySelectorAll('.galerija-item');
+                    galerijaItems.forEach((item, index) => {
+                        item.addEventListener('click', () => openLightbox(index));
+                    });
+                }).catch(err => console.error('Napaka pri nalaganju galerije:', err));
+        }
     </script>
 
 </body>

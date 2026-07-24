@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cenik storitev — Masaža in športna terapija | Manus Aurea</title>
-    <meta name="description" content="Cenik: športna masaža celega telesa, klasična masaža celega telesa , masaža posameznih predelov, športna terapija.">
-    <meta name="keywords" content="cenik masaža, cena masaže, športna masaža cena, fizioterapija cena, Manus Aurea">
+    <title>Cenik storitev — Fizioterapija in terapevtska masaža | Manus Aurea</title>
+    <meta name="description" content="Cenik: fizioterapevtska obravnava, instrumentalna terapija (Tecar, udarni valovi, laser) in terapevtska masaža v 30- ali 60-minutni izvedbi.">
+    <meta name="keywords" content="cenik fizioterapija, cena fizioterapevtske obravnave, cenik terapevtska masaža, Tecar terapija cena, laser terapija cena, Manus Aurea">
 
 
 
@@ -19,6 +19,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<!-- marcellus (cenik) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
 
 
 
@@ -52,8 +56,8 @@
                 <li id="dropdown" class="mobile-dropdown">
                     <a class="nav_link" href="#">Storitev</a>
                     <ul class="dropdown">
-                        <li><a href="sportna_terapija.html">Športna terapija</a></li>
-                        <li><a href="masaze.html">Masaže</a></li>
+                        <li><a href="sportna_terapija.html">Fizioterapija</a></li>
+                        <li><a href="masaze.html">Terapevtska masaža</a></li>
                     </ul>
                 </li>
                 <li><a class="nav_link active" href="cenik.html">Cenik</a></li>
@@ -71,144 +75,55 @@
 
 
     <main>
-        <div class="glava3">
+        <div class="hero wrap">
+            <span class="eyebrow">Cenik</span>
+            <h1 id="cenik-naslov">Cenik naših storitev</h1>
+            <p id="cenik-uvod">Vsaka obravnava v Manus Aurea je individualno prilagojena posamezniku in njegovim težavam. Cilj naše fizioterapije ni zgolj kratkotrajno zmanjšanje bolečin, temveč dolgoročna rešitev in kakovostna rehabilitacija.</p>
+        </div>
 
-            <div class="besedilo">
-                <div class="naslov"><h1>CENIK NAŠIH STORITEV</h1></div>
-                <div class="besedilo2"><p>Na tej strani najdete pregled vseh naših storitev ter njihove cene. Verjameva v pošteno, pregledno in dostopno ponudbo, zato so vse storitve jasno opisane, tako da lahko izberete tisto, kar najbolj ustreza vašim potrebam. Vsaka masaža ali terapija je prilagojena posamezniku, njegovemu počutju, stanju telesa ter ciljem – ne glede na to, ali potrebujete sprostitev, regeneracijo ali usmerjeno odpravljanje bolečin.</p></div>
-                
+        <div class="toggle-area wrap">
+            <span class="toggle-label" id="toggle-label">Število obravnav</span>
+            <div class="seg" role="group" aria-labelledby="toggle-label">
+                <button type="button" data-visits="1" aria-pressed="true">1 obravnava</button>
+                <button type="button" data-visits="5" aria-pressed="false">5 obravnav<span>srednji paket</span></button>
+                <button type="button" data-visits="10" aria-pressed="false">10 obravnav<span>velik paket</span></button>
             </div>
-            
-
-            
         </div>
 
+        <div class="wrap">
+            <div class="grid" id="grid"></div>
 
+            <div class="compare">
+                <details>
+                    <summary>Celoten cenik na enem mestu</summary>
+                    <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Storitev</th>
+                                <th class="hide-m">Trajanje</th>
+                                <th>1 obravnava</th>
+                                <th>5 obravnav</th>
+                                <th>10 obravnav</th>
+                            </tr>
+                        </thead>
+                        <tbody id="compare-body"></tbody>
+                    </table>
+                    </div>
+                </details>
+            </div>
 
-
-
-
-        
-
-      <div class="cenik-wrapper">
-            <h2>Masaža celega telesa</h2>
-            <table>
-                <tr>
-                    <td>1 masaža celega telesa</td>
-                    <td>Ena masaža traja od 45 do 50 min</td>
-                    <td>50 €</td>
-                </tr>
-                <tr>
-                    <td>Srednji paket masaž</td>
-                    <td>5 masaž, vsaka od 45 do 50 min</td>
-                    <td>220 €</td>
-                </tr>
-                <tr>
-                    <td>Velik paket masaž</td>
-                    <td>10 masaž, vsaka od 45 do 50 min</td>
-                    <td>430 €</td>
-                </tr>
-            </table>
-            <div class="naroci-se"><a href="kontakt.html"><button>Naroči se</button></a></div>
+            <p class="note">Vse cene vključujejo individualno prilagojeno obravnavo. Paketi so prenosljivi na družinske člane in veljajo 12 mesecev od nakupa.</p>
         </div>
 
-
-
-        
-
-
-
-
-
-
-
-
-
-        <div class="cenik-wrapper">
-            <h2>Športna masaža celega telesa</h2>
-            <table>
-                <tr>
-                    <td>1 športna masaža celega telesa</td>
-                    <td>Ena masaža traja od 45 do 50 min</td>
-                    <td>55 €</td>
-                </tr>
-                <tr>
-                    <td>Srednji paket masaž</td>
-                    <td>5 masaž, vsaka od 45 do 50 min</td>
-                    <td>240 €</td>
-                </tr>
-                <tr>
-                    <td>Velik paket masaž</td>
-                    <td>10 masaž, vsaka od 45 do 50 min</td>
-                    <td>470 €</td>
-                </tr>
-            </table>
-            <div class="naroci-se"><a href="kontakt.html"><button>Naroči se</button></a></div>
-        </div>
-
-
-
-        
-
-
-
-
-
-
-
-
-        <div class="cenik-wrapper">
-            <h2>Masaža posameznih predelov</h2>
-            <table>
-                <tr>
-                    <td>1 masaža posameznih predelov</td>
-                    <td>Hrbet, noge,... trajanje: 30 min</td>
-                    <td>35 €</td>
-                </tr>
-            </table>
-            <div class="naroci-se"><a href="kontakt.html"><button>Naroči se</button></a></div>
-        </div>
-
-
-
-
-
-
-
-
-
-        <div class="cenik-wrapper">
-            <h2>Športna terapija</h2>
-            <table>
-                <tr>
-                    <td>1 športna terapija</td>
-                    <td>Ena terapija traja do 50 min</td>
-                    <td>65 €</td>
-                </tr>
-                <tr>
-                    <td>Srednji paket terapij</td>
-                    <td>5 terapij, vsaka do 50 min</td>
-                    <td>300 €</td>
-                </tr>
-                <tr>
-                    <td>Velik paket terapij</td>
-                    <td>10 terapij, vsaka do 50 min</td>
-                    <td>590 €</td>
-                </tr>
-            </table>
-            <div class="naroci-se"><a href="kontakt.html"><button>Naroči se</button></a></div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
+        <section class="contact-band">
+            <h3>Niste prepričani, katera storitev je prava za vas?</h3>
+            <p>Pokličite naju ali pišite – z veseljem svetujeva.</p>
+            <div class="contact-line">
+                <a href="tel:+38630390531">+386 30 390 531</a>
+                <a href="mailto:manusaurea.lj@gmail.com">manusaurea.lj@gmail.com</a>
+            </div>
+        </section>
     </main>
 
 
@@ -233,7 +148,7 @@
                     <div class="storitve-list">
                         <h2>STORITVE</h2>
                         <ul>
-                            <li><a class="list-storitev" href="sportna_terapija.html">Športna terapija</a></li>
+                            <li><a class="list-storitev" href="sportna_terapija.html">Fizioterapija</a></li>
                             <li><a class="list-storitev" href="masaze.html#masaza">Masaža posameznih predelov</a></li>
                             <li><a class="list-storitev" href="masaze.html#masaza">Klasična masaža celega telesa</a></li>
                             <li><a class="list-storitev" href="masaze.html#masaza">Športna masaža celega telesa</a></li>
@@ -256,12 +171,120 @@
 
 
         <div class="avtorske">
-            <p>© 2025 Vse pravice pridržane | by <a href="https:\\skrablweb.si" target="_blank" >Skrablweb</a> | Pogoji poslovanja</p>
+            <p>© 2025 Vse pravice pridržane | by <a href="https:\\skrablweb.si" target="_blank" >Skrablweb</a> | Pogoji poslovanja | <a href="politika-zasebnosti.html">Politika zasebnosti</a></p>
         </div>
     </footer>
     <script src="index.js"></script>
-    <script src="dropdown.js"></script>
-    
+
+    <script>
+      (async function () {
+        const naslovEl = document.getElementById('cenik-naslov');
+        const uvodEl = document.getElementById('cenik-uvod');
+        if (naslovEl || uvodEl) {
+            nalozibesedila(['cenik-naslov', 'cenik-uvod']).then(map => {
+                if (naslovEl && map['cenik-naslov'] && map['cenik-naslov'][0]) {
+                    naslovEl.textContent = map['cenik-naslov'][0];
+                }
+                if (uvodEl && map['cenik-uvod'] && map['cenik-uvod'][0]) {
+                    uvodEl.textContent = map['cenik-uvod'][0];
+                }
+            }).catch(err => console.error('Napaka pri nalaganju besedil (cenik):', err));
+        }
+
+        const cenikRows = await sanityFetch('*[_type=="storitevCenik"] | order(vrstniRed asc) {kategorija, naziv, trajanje, cena1, cena5, cena10, opomba, izpostavljeno}');
+        const SERVICES = (cenikRows || []).map(r => {
+            const prices = {1: r.cena1};
+            if (r.cena5 !== null && r.cena5 !== undefined) prices[5] = r.cena5;
+            if (r.cena10 !== null && r.cena10 !== undefined) prices[10] = r.cena10;
+            return {cat: r.kategorija, name: r.naziv, dur: r.trajanje, prices: prices, note: r.opomba, featured: r.izpostavljeno};
+        });
+
+        const grid = document.getElementById("grid");
+        const fmt = n => n.toLocaleString("sl-SI") + " €";
+
+        // Build cards
+        SERVICES.forEach((s, i) => {
+            const card = document.createElement("section");
+            card.id = "card-" + i;
+            card.className = "card" + (s.featured ? " card--featured" : "");
+            card.innerHTML = `
+                <p class="cat">${s.cat}${s.featured ? ' <span class="badge">Individualna obravnava</span>' : ""}</p>
+                <h2>${s.name}</h2>
+                <p class="dur">⏱ ${s.dur}</p>
+                <div class="price-block">
+                    <div class="big-price" id="price-${i}"></div>
+                    <div class="per-visit" id="per-${i}"></div>
+                    <span class="savings" id="save-${i}"></span>
+                </div>
+                ${s.note ? `<p class="dur">${s.note}</p>` : ""}
+                <a class="cta" href="kontakt.html">Naroči se</a>
+            `;
+            grid.appendChild(card);
+        });
+
+        // Build comparison table
+        const tbody = document.getElementById("compare-body");
+        SERVICES.forEach(s => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>${s.name}</td>
+                <td class="hide-m">${s.dur}</td>
+                <td class="num">${fmt(s.prices[1])}</td>
+                <td class="num">${s.prices[5] ? fmt(s.prices[5]) : "—"}</td>
+                <td class="num">${s.prices[10] ? fmt(s.prices[10]) : "—"}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+
+        // Toggle logic
+        const buttons = document.querySelectorAll(".seg button");
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function render(visits) {
+            SERVICES.forEach((s, i) => {
+                const cardEl = document.getElementById("card-" + i);
+                const priceEl = document.getElementById("price-" + i);
+                const perEl = document.getElementById("per-" + i);
+                const saveEl = document.getElementById("save-" + i);
+
+                const price = s.prices[visits];
+
+                if (price === undefined) {
+                    cardEl.style.display = "none";
+                    return;
+                }
+                cardEl.style.display = "";
+
+                const update = () => {
+                    priceEl.textContent = fmt(price);
+                    if (visits === 1) {
+                        perEl.textContent = "cena za posamezno obravnavo";
+                        saveEl.classList.remove("show");
+                    } else {
+                        const per = price / visits;
+                        const saving = s.prices[1] * visits - price;
+                        perEl.textContent = fmt(per) + " na obravnavo";
+                        saveEl.textContent = "prihranite " + fmt(saving);
+                        saveEl.classList.add("show");
+                    }
+                };
+
+                if (reduceMotion) { update(); return; }
+                priceEl.classList.add("flash");
+                setTimeout(() => { update(); priceEl.classList.remove("flash"); }, 180);
+            });
+        }
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                buttons.forEach(b => b.setAttribute("aria-pressed", b === btn ? "true" : "false"));
+                render(Number(btn.dataset.visits));
+            });
+        });
+
+        render(1);
+      })();
+    </script>
 
 
     

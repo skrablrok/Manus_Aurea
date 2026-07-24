@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins';
+    font-family: 'Times New Roman', Times, serif;
 }
 
 body {
@@ -298,6 +298,7 @@ ul li a {
     display: flex;
     flex-direction: column;
     gap: 1vw;
+    padding-top: 5vw;
 }
 .besedilo h1{
     font-size: clamp(29px, 5vw, 200px);
@@ -427,31 +428,43 @@ ul li a {
 
 .contact-section {
     width: 100%;
-    height: 100vh;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    background-image:linear-gradient(rgba(10,22,45,0.45), rgba(10,22,45,0.45)), url("index/IMG_0509.jpeg"); /* zamenjaj */
-    background-size: cover;
-    background-position: center;
+    padding: 6vw 5vw;
+}
+
+.contact-card {
+    display: flex;
+    width: 100%;
+    max-width: 1100px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(10, 22, 45, 0.18);
 }
 
 /* LEVA STRAN */
 
 .contact-left {
-    color: white;
-    max-width: 40%;
+    color: #ffffff;
+    background-color: #14213D;
+    width: 40%;
+    padding: 4vw 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .contact-left h1 {
-    font-size: clamp(45px, 3.5vw, 120px);
-    margin-bottom: .5vw;
+    font-size: clamp(28px, 2.4vw, 60px);
+    margin-bottom: .8vw;
     font-weight: 700;
+    color: #FFE599;
 }
 
 .contact-left p {
-    font-size: clamp(16px, 1vw, 90px);
+    font-size: clamp(14px, 1vw, 40px);
     margin: 8px 0;
     font-weight: 100;
 }
@@ -463,15 +476,18 @@ ul li a {
 /* DESNA STRAN */
 
 .contact-right {
-    width: 40%;
-    color: white;
+    width: 60%;
+    color: #14213D;
+    background-color: #ffffff;
+    padding: 4vw 3vw;
 }
 
 .contact-right h2 {
     text-align: left;
-    font-size: clamp(24px, 1.5vw, 80px);
-    margin-bottom: 35px;
+    font-size: clamp(20px, 1.4vw, 48px);
+    margin-bottom: 30px;
     font-weight: 300;
+    color: #14213D;
 }
 
 /* FORM STYLING */
@@ -479,7 +495,7 @@ ul li a {
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 14px;
     justify-content: flex-start;
     align-items: flex-start;
 
@@ -488,18 +504,49 @@ ul li a {
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 18px 20px;
+    padding: 13px 18px;
     border-radius: 12px;
     border: none;
     outline: none;
+    background-color: #E9EFF7;
+    color: #14213D;
     font-size: clamp(12px, .8vw, 50px);
     box-sizing: border-box;
     word-break: break-all;
 }
 
 .contact-form textarea {
-    height: 15vw;
+    height: 7vw;
     resize: none;
+}
+
+.soglasje {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: clamp(11px, .75vw, 40px);
+    font-weight: 300;
+    color: #14213D;
+    line-height: 1.5;
+    cursor: pointer;
+}
+.contact-form .soglasje input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    accent-color: #C9A227;
+    cursor: pointer;
+}
+.soglasje a {
+    color: #A6811E;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+.soglasje a:hover {
+    color: #14213D;
 }
 
 .row {
@@ -515,9 +562,7 @@ ul li a {
 
 .contact-form button {
     font-size: clamp(12px, .8vw, 120px);
-    isolation: isolate;
     position: relative;
-    overflow: hidden;
     background-color: #14213D;
     border: none;
     padding: 1vw;
@@ -526,29 +571,18 @@ ul li a {
     border-radius: 50px;
     color: #ffffff;
     cursor: pointer;
-    transition: color 0.4s ease;
-}
-.contact-form button::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: #D3E0F0;          /* BARVA, KI PRIDE OB HOVER */
-    transform: scaleX(0);
-    transform-origin: left;       /* animacija iz leve proti desni */
-    transition: transform 0.4s ease;
-    z-index: -1;
-    border-radius: 50px;
+    box-shadow:
+        rgba(0, 0, 0, 0.41) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* HOVER */
-.contact-form button:hover::before {
-    transform: scaleX(1);
-}
-
-/* da je tekst viden nad animacijo */
+/* HOVER – gumb se rahlo dvigne (enako kot hero gumbi) */
 .contact-form button:hover {
-    color: #14213D; /* poljubno – spremeni po želji */
-    border: none;
+    transform: translateY(-6px);
+    box-shadow:
+        rgba(0, 0, 0, 0.45) 0px 14px 24px,
+        rgba(0, 0, 0, 0.25) 0px 8px 8px;
 }
 .contact-form input:focus,
 .contact-form textarea:focus {
@@ -569,6 +603,7 @@ ul li a {
     opacity: 0.6;
 }
 .kontakt{
+    padding-top: 4vw;
     padding-bottom: 5vw;
 }
 
@@ -587,47 +622,44 @@ ul li a {
 
 
 @media(max-width: 970px){
-    .contact-section{
+    .contact-card{
         flex-direction: column;
-        gap: 5vw;
     }
 
     .contact-right{
-        width: 80%;
+        width: 100%;
     }
     .contact-left{
-        max-width: 80%;
-        width: 80%;
-
+        width: 100%;
     }
 }
 
 @media(max-width: 600px){
     .contact-section{
+        padding: 12vw 6vw;
+    }
+    .contact-card{
         flex-direction: column;
-        gap: 5vw;
     }
 
     .contact-right{
-        width: 80%;
+        width: 100%;
     }
     .contact-left{
-        max-width: 80%;
-        width: 80%;
-
+        width: 100%;
     }
     .contact-left h1 {
-        font-size: clamp(35px, 4vw, 120px);
+        font-size: clamp(30px, 5vw, 120px);
     }
 
     .contact-left p {
         font-size: clamp(13px, 1vw, 90px);
     }
     .contact-right h2 {
-        font-size: clamp(22px, 1.5vw, 80px);
+        font-size: clamp(20px, 1.5vw, 80px);
     }
     .contact-form textarea {
-        height: 25vw;
+        height: 16vw;
     }
     .contact-form button{
         padding: 1.5vw;
@@ -637,7 +669,6 @@ ul li a {
 }
 @media(max-height:1245px){
     .contact-section{
-        height: fit-content;
         padding-top: 2vw;
         padding-bottom: 2vw;
     }

@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins';
+    font-family: 'Times New Roman', Times, serif;
 }
 
 body {
@@ -739,8 +739,6 @@ background: #D3E0F0;
 }
 .naroci-se button{
     position: relative;
-    overflow: hidden;
-    isolation: isolate;
     padding: .5vw;
     padding-left: 2vw;
     padding-right: 2vw;
@@ -748,30 +746,20 @@ background: #D3E0F0;
     color: #ffffff;
     border: none;
     border-radius: 20px;
-    transition: color 0.4s ease;
     font-size: clamp(14px, 1vw, 50px);
     cursor: pointer;
-}
-.naroci-se button::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: #D3E0F0;
-    transform: scaleX(0);
-    transform-origin: left;       /* animacija iz leve proti desni */
-    transition: transform 0.4s ease;
-    z-index: -1;
+    box-shadow:
+        rgba(0, 0, 0, 0.41) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* HOVER */
-.naroci-se button:hover::before {
-    transform: scaleX(1);
-}
-
-/* da je tekst viden nad animacijo */
+/* HOVER – gumb se rahlo dvigne (enako kot hero gumbi) */
 .naroci-se button:hover {
-    color: #14213D; /* poljubno – spremeni po želji */
-    border: none;
+    transform: translateY(-6px);
+    box-shadow:
+        rgba(0, 0, 0, 0.45) 0px 14px 24px,
+        rgba(0, 0, 0, 0.25) 0px 8px 8px;
 }
 
 
