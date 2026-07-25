@@ -174,6 +174,16 @@ const dropdown = document.querySelector('.mobile-dropdown > a');
                     }).catch(err => console.error('Napaka pri nalaganju zaposlenih:', err));
             }
 
+            // O NAS - takoj odpri opis zaposlenega ob kliku/dotiku (namesto dolgega pritiska za hover)
+            // uporabimo delegacijo, ker se .kartica elementi ustvarijo šele po nalaganju iz CMS-ja
+            document.addEventListener('click', (e) => {
+                const k = e.target.closest('.kartica');
+                if (!k) return;
+                const bilaOdprta = k.classList.contains('odprta');
+                document.querySelectorAll('.kartica.odprta').forEach(o => o.classList.remove('odprta'));
+                if (!bilaOdprta) k.classList.add('odprta');
+            });
+
             // KONTAKT - uvodno besedilo
             const kontaktUvod = document.getElementById('kontakt-uvod');
             if (kontaktUvod) {

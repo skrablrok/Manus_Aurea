@@ -673,6 +673,16 @@ ul li a {
         padding-left: 3vw;
         padding-right: 3vw;
     }
+    .soglasje{
+        font-size: 13px;
+        line-height: 1.6;
+        gap: 12px;
+    }
+    .contact-form .soglasje input[type="checkbox"]{
+        width: 20px;
+        height: 20px;
+        margin-top: 1px;
+    }
 }
 @media(max-height:1245px){
     .contact-section{

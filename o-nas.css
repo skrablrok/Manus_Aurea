@@ -577,9 +577,13 @@ ul li a {
     transition: opacity .4s ease, transform .4s ease;
     overflow-y: auto;
 }
-.kartica:hover .kartica-info{
+.kartica:hover .kartica-info,
+.kartica.odprta .kartica-info{
     opacity: 1;
     transform: translateY(0);
+}
+.kartica.odprta::after{
+    opacity: 1;
 }
 
 .kartica-info p{
@@ -605,6 +609,9 @@ ul li a {
     .kartica{
         width: 80%;
         height: 90vw;
+    }
+    .kartica-label{
+        padding: 20px 24px;
     }
 }
 
