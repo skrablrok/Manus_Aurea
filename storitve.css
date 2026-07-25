@@ -384,7 +384,7 @@ ul li a {
     text-align: justify;
 }
 .text2 p{
-    padding-top: 0vw;
+    padding-top: 2vw;
 }
 .text2 .masaze-naslov{
     margin-top: 2vw;
@@ -620,6 +620,9 @@ ul li a {
 
 .terapije .kratko{
     padding-top: .2vw;
+}
+.terapije .kratko p:first-child{
+    padding-top: .5vw;
 }
 .terapije h2{
     padding-top: 2.5vw;
