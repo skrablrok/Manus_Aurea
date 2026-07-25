@@ -441,6 +441,9 @@ ul li a {
         width: 80%;
         padding-bottom: 15vw;
     }
+    .text2 p{
+        padding-top: 4.5vw;
+    }
     .text2 .masaze-naslov{
         padding-top: 4.5vw;
     }
@@ -451,6 +454,9 @@ ul li a {
 }
 @media(max-width: 640px){
     .text p{
+        padding-top: 8vw;
+    }
+    .text2 p{
         padding-top: 8vw;
     }
 }
