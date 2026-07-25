@@ -99,15 +99,22 @@ ul li a {
 }
 
 #menu-icon {
-    color: #14213D;
+    color: #ffffff;
     font-size: 55px;
     z-index: 1101;
     cursor: pointer;
     display: none;
     transition: .3s;
 }
+.nav_bar.sticky #menu-icon {
+    color: #14213D;
+}
 #menu-icon.bx-x {
+    color: #ffffff;
     transform: rotate(90deg); /* lep efekt */
+}
+.nav_bar.sticky #menu-icon.bx-x {
+    color: #ffffff;
 }
 
 
@@ -172,7 +179,7 @@ ul li a {
 .nav_bar.sticky .logo img {
     width: clamp(80px, 3.2vw, 240px);
 }
-.nav_bar.sticky #crna {
+.nav_bar.sticky a {
     color: #14213D; /* temna barva */
 }
 .nav_bar.sticky .kontakt_nav {
@@ -199,7 +206,7 @@ ul li a {
         max-height: 500px; /* dovolj za vse linke, lahko prilagodiš */
     }
 
-    .nav_bar.sticky #crna {
+    .nav_bar.sticky a {
         color: #14213D; /* temna barva */
     }
     .nav_bar.sticky .kontakt_nav {
@@ -231,6 +238,12 @@ ul li a {
         margin-left: 0;
         color: #ffffff;
         font-size: clamp(18px, 1.9vw, 90px);
+    }
+    .nav_bar.sticky .navlist a{
+        color: #ffffff;
+    }
+    .nav_bar.sticky .navlist a.kontakt_nav{
+        color: #14213D;
     }
     .navlist.open{
         right: 0;
