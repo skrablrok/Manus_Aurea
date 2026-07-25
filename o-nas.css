@@ -106,6 +106,7 @@ ul li a {
     transition: .3s;
 }
 #menu-icon.bx-x {
+    color: #ffffff;
     transform: rotate(90deg); /* lep efekt */
 }
 
