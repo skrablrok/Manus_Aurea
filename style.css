@@ -515,7 +515,7 @@ ul li a {
 .storitve #slika1{
     width: 25vw;
     height: 30vw;
-    background-image: url(index/pexels-anete-lusina-5240637.jpg);
+    background-image: url(index/IMG_0491.jpeg);
     background-position: center;
     background-size: cover;
     border-top-left-radius: 25% !important;
@@ -525,7 +525,7 @@ ul li a {
 .storitve #slika2{
     width: 25vw;
     height: 30vw;
-    background-image: url(index/IMG_0491.jpeg);
+    background-image: url(index/pexels-anete-lusina-5240637.jpg);
     background-position: center;
     background-size: cover;
     border-top-right-radius: 25% !important;
