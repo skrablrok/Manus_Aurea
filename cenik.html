@@ -210,7 +210,7 @@
             card.innerHTML = `
                 <p class="cat">${s.cat}${s.featured ? ' <span class="badge">Individualna obravnava</span>' : ""}</p>
                 <h2>${s.name}</h2>
-                <p class="dur">⏱ ${s.dur}</p>
+                ${s.dur ? `<p class="dur">⏱ ${s.dur}</p>` : ""}
                 <div class="price-block">
                     <div class="big-price" id="price-${i}"></div>
                     <div class="per-visit" id="per-${i}"></div>
