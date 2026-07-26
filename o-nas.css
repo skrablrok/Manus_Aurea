@@ -290,7 +290,7 @@ ul li a {
 
 
 .glava3{
-    background-image:linear-gradient(rgba(10,22,45,0.55)), url(manus_aurea/IMG_0119.jpeg);
+    background-image:linear-gradient(rgba(10,22,45,0.55)), url(manus_aurea/IMG_0119.webp);
     background-color: #14213D;
     background-position: center;
     background-size: cover;
@@ -513,10 +513,10 @@ ul li a {
 }
 
 .kartica-kaja{
-    background-image: url(manus_aurea/IMG_0433.jpeg);
+    background-image: url(manus_aurea/IMG_0433.webp);
 }
 .kartica-rok{
-    background-image: url(manus_aurea/IMG_2828.jpeg);
+    background-image: url(manus_aurea/IMG_2828.webp);
 }
 
 .kartica::before{

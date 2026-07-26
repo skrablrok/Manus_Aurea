@@ -290,7 +290,7 @@ ul li a {
 
 
 .glava{
-    background-image:linear-gradient(rgba(10,22,45,0.55)), url(sportna_terapija/IMG_0145.jpeg);
+    background-image:linear-gradient(rgba(10,22,45,0.55)), url(sportna_terapija/IMG_0145.webp);
     background-color: #14213D;
     background-position: top;
     background-size: cover;
@@ -301,7 +301,7 @@ ul li a {
     align-items: center;
 }
 .glava2{
-    background-image:linear-gradient(rgba(10,22,45,0.55)), url(masaze/IMG_0166.jpeg);
+    background-image:linear-gradient(rgba(10,22,45,0.55)), url(masaze/IMG_0166.webp);
     background-color: #14213D;
     background-position: top;
     background-size: cover;
@@ -312,7 +312,7 @@ ul li a {
     align-items: center;
 }
 .glava3{
-    background-image:linear-gradient(rgba(10,22,45,0.55)), url(sportna_masaza_celega_telesa/IMG_0509.jpeg);
+    background-image:linear-gradient(rgba(10,22,45,0.55)), url(sportna_masaza_celega_telesa/IMG_0509.webp);
     background-position: top;
     background-size: cover;
     height: 70vh;
@@ -420,10 +420,10 @@ ul li a {
     margin-top: 5vw;
 }
 .slika{
-    background-image: url(sportna_terapija/pexels-danikprihodko-8219057.jpg);
+    background-image: url(sportna_terapija/pexels-danikprihodko-8219057.webp);
 }
 .slika4{
-    background-image: url(masaze/pexels-olia-danilevich-9336026.jpg);
+    background-image: url(masaze/pexels-olia-danilevich-9336026.webp);
 }
 
 

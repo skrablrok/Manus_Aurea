@@ -326,7 +326,7 @@ ul li a {
     rgba(10,22,45,0.65) 0%,
     rgba(10,22,45,0.65) 70%,
     rgba(233,239,247,1)
-), url("index/IMG_0155.jpeg");
+), url("index/IMG_0155.webp");
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
@@ -406,7 +406,7 @@ ul li a {
     width: 25vw;
     height: 25vw;
     border-radius: 50%;
-    background-image: url(index/IMG_0511.jpeg);
+    background-image: url(index/IMG_0511.webp);
     background-position: center;
     background-size: cover;
 }
@@ -515,7 +515,7 @@ ul li a {
 .storitve #slika1{
     width: 25vw;
     height: 30vw;
-    background-image: url(index/IMG_0491.jpeg);
+    background-image: url(index/IMG_0491.webp);
     background-position: center;
     background-size: cover;
     border-top-left-radius: 25% !important;
@@ -525,7 +525,7 @@ ul li a {
 .storitve #slika2{
     width: 25vw;
     height: 30vw;
-    background-image: url(index/pexels-anete-lusina-5240637.jpg);
+    background-image: url(index/pexels-anete-lusina-5240637.webp);
     background-position: center;
     background-size: cover;
     border-top-right-radius: 25% !important;
@@ -738,7 +738,7 @@ ul li a {
 }
 
 .onama .slika{
-    background-image: url(index/IMG_3292.jpeg);
+    background-image: url(index/IMG_3292.webp);
     height: 35vw;
     width: 30vw;
     border-radius: 25%;
@@ -987,7 +987,7 @@ ul li a {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-image: linear-gradient(rgba(10,22,45,0.72), rgba(10,22,45,0.72)), url(masaze/pexels-olia-danilevich-9336026.jpg);
+    background-image: linear-gradient(rgba(10,22,45,0.72), rgba(10,22,45,0.72)), url(masaze/pexels-olia-danilevich-9336026.webp);
     background-size: cover;
     background-position: center;
     padding: 5vw 8vw;
@@ -1169,7 +1169,7 @@ ul li a {
     justify-content: space-evenly;
     align-items: center;
     box-sizing: border-box;
-    background-image:linear-gradient(rgba(10,22,45,0.45), rgba(10,22,45,0.45)), url("index/IMG_0509.jpeg"); /* zamenjaj */
+    background-image:linear-gradient(rgba(10,22,45,0.45), rgba(10,22,45,0.45)), url("index/IMG_0509.webp"); /* zamenjaj */
     background-size: cover;
     background-position: center;
 }
