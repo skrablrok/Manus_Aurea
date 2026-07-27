@@ -875,7 +875,7 @@ iframe{
 
 .noga a{
     font-size: clamp(10px, .9vw, 50px);
-    display: inline-block;
+    display: block;
     padding: 6px 0;
 }
 .noga h2{
