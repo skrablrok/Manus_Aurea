@@ -182,6 +182,9 @@ ul li a {
 .nav_bar.sticky a {
     color: #14213D; /* temna barva */
 }
+.nav_bar.sticky .dropdown li a {
+    color: #fff;
+}
 .nav_bar.sticky .kontakt_nav {
     color: #14213D; /* temna barva */
 }
@@ -208,6 +211,9 @@ ul li a {
 
     .nav_bar.sticky a {
         color: #14213D; /* temna barva */
+    }
+    .nav_bar.sticky .dropdown li a {
+        color: #fff;
     }
     .nav_bar.sticky .kontakt_nav {
         color: #14213D; /* temna barva */
