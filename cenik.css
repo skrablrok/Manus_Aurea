@@ -704,6 +704,8 @@ iframe{
 
 .noga a{
     font-size: clamp(10px, .9vw, 50px);
+    display: inline-block;
+    padding: 6px 0;
 }
 .noga h2{
     font-size: clamp(16px, 1.3vw, 50px);

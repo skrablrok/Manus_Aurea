@@ -368,6 +368,10 @@ ul li a {
 }
 .leva_hero .gumb button{
     padding: .8vw 2vw;
+    min-height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     isolation: isolate;           /* da z-index dela pravilno */
     background-color: transparent;
@@ -568,6 +572,10 @@ ul li a {
     padding: .7vw;
     padding-left: 1.5vw;
     padding-right: 1.5vw;
+    min-height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50px;
     color: #ffffff;
     font-size: clamp(12px, .8vw, 60px);
@@ -1547,6 +1555,8 @@ iframe{
 
 .noga a{
     font-size: clamp(10px, .9vw, 50px);
+    display: inline-block;
+    padding: 6px 0;
 }
 .noga h2{
     font-size: clamp(16px, 1.3vw, 50px);
