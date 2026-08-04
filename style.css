@@ -924,16 +924,39 @@ ul li a {
     font-size: clamp(14px, 1.1vw, 20px);
 }
 
-.google-review-seznam {
+.google-review-track-wrap {
     width: 100%;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+}
+
+.google-review-seznam {
+    width: max-content;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
     gap: 1.6vw;
+    animation: google-review-marquee 40s linear infinite;
+}
+
+.google-review-track-wrap:hover .google-review-seznam {
+    animation-play-state: paused;
+}
+
+@keyframes google-review-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .google-review-seznam {
+        animation: none;
+    }
 }
 
 .google-review-card {
-    width: min(90%, 400px);
+    width: min(85vw, 380px);
+    flex: 0 0 auto;
     background: #ffffff;
     border-radius: 18px;
     padding: 1.8vw 2vw;
