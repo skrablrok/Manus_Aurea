@@ -927,6 +927,8 @@ ul li a {
 .google-review-track-wrap {
     width: 100%;
     overflow: hidden;
+    padding: 35px 0;
+    margin: -35px 0;
     -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
     mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
 }
