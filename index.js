@@ -71,6 +71,7 @@ const dropdown = document.querySelector('.mobile-dropdown > a');
                 if (tedni < 4) return `pred ${tedni} tedni`;
 
                 const meseci = Math.floor(dni / 30.44);
+                if (meseci < 1) return `pred ${tedni} tedni`;
                 if (meseci === 1) return 'pred 1 mesecem';
                 if (meseci < 12) return `pred ${meseci} meseci`;
 
