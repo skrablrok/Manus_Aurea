@@ -849,6 +849,41 @@ ul li a {
 
 
 
+.partnerji{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vw;
+    padding: 3vw 5vw 4vw;
+}
+.partnerji h2{
+    font-size: clamp(20px, 2.2vw, 40px);
+    color: #14213D;
+    text-align: center;
+}
+.partnerji-seznam{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4vw;
+}
+.partner-logo{
+    height: clamp(36px, 4vw, 70px);
+    width: auto;
+    object-fit: contain;
+}
+@media(max-width:750px){
+    .partnerji{
+        padding: 24px 20px 32px;
+        gap: 20px;
+    }
+    .partnerji-seznam{
+        gap: 24px;
+    }
+}
+
 .ocene{
     display: flex;
     flex-direction: column;
